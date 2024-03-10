@@ -68,12 +68,12 @@ def classify_images(images_dir, results_dic, model):
     for k, v in results_dic.items():
       match = 0
       # concat the filepath
-      fpath = images_dir + "/" + k
-      classified_label = classifer(fpath, model)
+      fpath = images_dir + k
+      classified_label = classifier(fpath, model)
       # make the classified string lowercase
       classified_label = classified_label.lower()
       # check to see if the label and classified_label match
-      if results_dic[k][0] in classified_image:
+      if results_dic[k][0] in classified_label:
         match = 1
       # create a new list to add to existing list
       label_match_list = [classified_label, match]
