@@ -77,6 +77,6 @@ def classify_images(images_dir, results_dic, model):
         match = 1
       # create a new list to add to existing list
       label_match_list = [classified_label, match]
-      results_dic[k].extends(label_match_list)
+      results_dic[k].extend(label_match_list)
       
     return None 
