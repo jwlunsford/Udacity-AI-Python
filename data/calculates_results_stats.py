@@ -82,9 +82,12 @@ def calculates_results_stats(results_dic):
     for k, v in results_dic.items():
         dogs_img += results_dic[k][3]
         matches += results_dic[k][2]
-        correct_dogs += 1 if results_dic[k][3] == 1 and results_dic[k][4] == 1 else 0
-        correct_notdogs += 1 if results_dic[k][3] == 0 and results_dic[k][4] == 0 else 0
-        correct_breed += 1 if results_dic[k][3] == 1 and results_dic[k][2] == 1 else 0
+        if results_dic[k][3] == 1 and results_dic[k][4] == 1:
+              correct_dogs += 1
+        if results_dic[k][3] == 0 and results_dic[k][4] == 0:
+              correct_notdogs += 1
+        if results_dic[k][3] == 1 and results_dic[k][2] == 1:
+              correct_breed += 1
 
     # append results to dict
     n_images = len(results_dic)
