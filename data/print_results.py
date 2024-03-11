@@ -66,7 +66,7 @@ def print_results(results_dic, results_stats_dic, model,
     print("Images: ", results_stats_dic['n_images'])
     print("# Dogs: ", results_stats_dic['n_dogs_img'])
     print("# Not Dogs: ", results_stats_dic['n_notdogs_img'])
-    print("# Matches: ", results_stats_dic['n_match'])
+    print("# Matches: ", results_stats_dic['n_label_matches'])
     print("# Correct Dogs: ", results_stats_dic['n_correct_dogs'])
     print("# Correct Not Dogs: ", results_stats_dic['n_correct_notdogs'])
     print("% Matches: ", results_stats_dic['pct_match'])
@@ -83,7 +83,7 @@ def print_results(results_dic, results_stats_dic, model,
         print("Misclassed Dogs: ", misclassed_dogs)
 
     # user option - print misclassed breeds
-    if (print_incorrect_breed and results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breeds']):
+    if (print_incorrect_breed and results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed']):
 
         misclassed_breeds = 0
         for k, v in results_dic.items():
