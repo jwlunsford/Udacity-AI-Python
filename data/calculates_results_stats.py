@@ -96,12 +96,12 @@ def calculates_results_stats(results_dic):
     # A
     results_stats_dic['n_correct_dogs'] = n_correct_dogs
     # B
-    results_stats_dic['n_dog_imgs'] = n_dog_imgs
+    results_stats_dic['n_dogs_img'] = n_dog_imgs
     # C
     results_stats_dic['n_correct_notdogs'] = n_correct_notdogs
     # D    
     n_notdogs = n_images - n_dog_imgs
-    results_stats_dic['n_notdog_imgs'] = n_notdogs
+    results_stats_dic['n_notdogs_img'] = n_notdogs
     # E
     results_stats_dic['n_correct_breed'] = n_correct_breed    
     # Y (optional)
