@@ -67,13 +67,11 @@ def adjust_results4_isadog(results_dic, dogfile):
     Returns:
            None - results_dic is mutable data type so no return needed.
     """
-
-    txtfile = r'dognames.txt'
     dognames = dict()
     # read dog names into a dict where key is the dog name
-    with open(txtfile, 'r') as f:
+    with open(dogfile, 'r', encoding='utf-8') as f:
       for line in f:
-        name = f.read().rstrip()
+        name = line.rstrip()
         dognames[name] = 1
     
     # update the dictionary
@@ -88,6 +86,6 @@ def adjust_results4_isadog(results_dic, dogfile):
         idx4 = 1
       # append idx3 and idx4 to results_dic
       result_list = [idx3, idx4]
-      results_dic.extend(result_list)
+      results_dic[k].extend(result_list)
 
     return None
