@@ -55,7 +55,7 @@ def get_pet_labels(image_dir):
       for word in words:
         if word.isalpha():
           pet_name += word + " "
-      pet_name.strip()
+      pet_name.rstrip()
       # append pet name to the result list
       results_list.append(pet_name)
       # add results_list to the dict
