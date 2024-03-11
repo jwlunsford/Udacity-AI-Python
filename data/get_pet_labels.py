@@ -46,6 +46,9 @@ def get_pet_labels(image_dir):
     files_list = listdir(image_dir)
 
     for f in files_list:
+      # create list to hold the classified information
+      results_list = list()
+      # extract pet name from file
       pet_name = " "
       f = f.lower()
       words = f.split('_')
@@ -53,6 +56,9 @@ def get_pet_labels(image_dir):
         if word.isalpha():
           pet_name += word + " "
       pet_name.strip()
-      results_dic[f] = pet_name      
+      # append pet name to the result list
+      results_list.append(pet_name)
+      # add results_list to the dict
+      results_dic[f] = results_list
 
     return results_dic
