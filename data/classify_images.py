@@ -72,7 +72,7 @@ def classify_images(images_dir, results_dic, model):
       classified_label = classifier(fpath, model)
       # make the classified string lowercase
       classified_label = classified_label.lower()
-      # check to see if the label and classified_label match
+      # check to see if the pet image label is in classified_label
       if results_dic[k][0] in classified_label:
         match = 1
       # create a new list to add to existing list
