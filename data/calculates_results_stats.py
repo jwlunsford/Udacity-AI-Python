@@ -112,7 +112,7 @@ def calculates_results_stats(results_dic):
     results_stats_dic['pct_correct_dogs'] = n_correct_dogs / n_dog_imgs * 100
     # 1B
     if n_notdogs >= 1:
-        results_stats_dic['pct_correct_notdogs'] = n_correct_notdogs / n_notdogs
+        results_stats_dic['pct_correct_notdogs'] = n_correct_notdogs / n_notdogs * 100
     else:
         results_stats_dic['pct_correct_notdogs'] = 0
     # 2
