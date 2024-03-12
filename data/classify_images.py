@@ -68,7 +68,7 @@ def classify_images(images_dir, results_dic, model):
     for k, v in results_dic.items():
       match = 0
       # concat the filepath
-      fpath = images_dir + k
+      fpath = images_dir + "/" + k
       classified_label = classifier(fpath, model)
       # make the classified string lowercase
       classified_label = classified_label.lower()
