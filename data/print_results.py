@@ -76,19 +76,23 @@ def print_results(results_dic, results_stats_dic, model,
 
     # user option - print misclassed dogs
     if (print_incorrect_dogs and results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs'] != results_stats_dic['n_images']):
-
-        misclassed_dogs = 0
+        # print pet image and classifier labels for missclassed dogs when
+        # the labels disagree on whether or not am image is a dog
+        print("Misclassified Dogs:")
         for k, v in results_dic.items():
-            misclassed_dogs += 1 if results_dic[k][3:] == 1 else 0
-        print("Misclassed Dogs: ", misclassed_dogs)
+            if sum(results_dic[k][3:]) == 1:
+                 print(f"Real: {results_dic[k][0]:>20} \tClassifier: {results_dic[k][1]:<50}")
 
     # user option - print misclassed breeds
     if (print_incorrect_breed and results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed']):
-
-        misclassed_breeds = 0
+        # print pet image and classifier label if dog brreds do not match, when
+        # image is a dog, classified as a dog, but labels do not match.
+        print("")
+        print("Misclassified Breeds:")
         for k, v in results_dic.items():
-                misclassed_breeds += 1 if results_dic[k][3:] == 2 and results_dic[k][2] == 0 else 0
-        print("Misclassified Breeds: ", misclassed_breeds)
+                if sum(results_dic[k][3:]) == 2 and results_dic[k][2] == 0:
+                     print(f"Real: {results_dic[k][0]:>20} \tClassifier: {results_dic[k][1]:<50}")
+
         
 
 
